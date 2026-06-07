@@ -67,23 +67,64 @@ def fred_series(series_id, days=400):
         return []
 
 
-def stooq_ohlc(symbol):
-    """Daily OHLCV from Stooq as list of dicts ascending; [] on failure."""
-    url = f"https://stooq.com/q/d/l/?s={symbol}&i=d"
-    try:
-        text = _get(url)
-        rows = list(csv.DictReader(io.StringIO(text)))
-        out = []
-        for r in rows:
-            try:
-                out.append({
-                    "date": r["Date"],
-                    "o": float(r["Open"]), "h": float(r["High"]),
-                    "l": float(r["Low"]), "c": float(r["Close"]),
-                    "v": float(r["Volume"]) if r.get("Volume") not in (None, "", "0") else 0.0,
-                })
-            except (ValueError, KeyError):
+def _yahoo_chart(symbol):
+    """Yahoo v8 chart JSON (no auth/crumb needed). symbol 'spy.us' -> 'SPY'."""
+    yf = symbol.replace(".us", "").upper()
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yf}?range=2y&interval=1d"
+    d = json.loads(_get(url, headers={"User-Agent": UA, "Accept": "application/json"}))
+    res = (d.get("chart") or {}).get("result") or []
+    if not res:
+        return []
+    r0 = res[0]
+    ts = r0.get("timestamp") or []
+    q = ((r0.get("indicators") or {}).get("quote") or [{}])[0]
+    o, h, l, c, v = (q.get(k) or [] for k in ("open", "high", "low", "close", "volume"))
+    out = []
+    for i, t in enumerate(ts):
+        try:
+            co = c[i]
+            if co is None:
                 continue
+            out.append({
+                "date": datetime.datetime.utcfromtimestamp(t).date().isoformat(),
+                "o": float(o[i]) if i < len(o) and o[i] is not None else float(co),
+                "h": float(h[i]) if i < len(h) and h[i] is not None else float(co),
+                "l": float(l[i]) if i < len(l) and l[i] is not None else float(co),
+                "c": float(co),
+                "v": float(v[i]) if i < len(v) and v[i] is not None else 0.0,
+            })
+        except (IndexError, TypeError, ValueError):
+            continue
+    return out
+
+
+def _stooq_csv(symbol):
+    rows = list(csv.DictReader(io.StringIO(_get(f"https://stooq.com/q/d/l/?s={symbol}&i=d"))))
+    out = []
+    for r in rows:
+        try:
+            out.append({"date": r["Date"], "o": float(r["Open"]), "h": float(r["High"]),
+                        "l": float(r["Low"]), "c": float(r["Close"]),
+                        "v": float(r["Volume"]) if r.get("Volume") not in (None, "", "0") else 0.0})
+        except (ValueError, KeyError):
+            continue
+    return out
+
+
+def stooq_ohlc(symbol):
+    """Daily OHLCV, ascending. Yahoo v8 chart first (GitHub-IP friendly),
+    Stooq as fallback. Returns [] only if both fail."""
+    try:
+        out = _yahoo_chart(symbol)
+        if out:
+            print(f"[yahoo] {symbol} ok ({len(out)} rows)")
+            return out
+        print(f"[yahoo] {symbol} empty -> trying stooq")
+    except Exception as e:  # noqa
+        print(f"[yahoo] {symbol} failed ({e}) -> trying stooq")
+    try:
+        out = _stooq_csv(symbol)
+        print(f"[stooq] {symbol} {'ok '+str(len(out))+' rows' if out else 'empty'}")
         return out
     except Exception as e:  # noqa
         print(f"[stooq] {symbol} failed: {e}")
