@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0        # rebase 시 전체 히스토리 필요
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -36,8 +38,14 @@ jobs:
           git config user.email "actions@github.com"
           git add data.json history.json
           if git diff --staged --quiet; then
-            echo "No changes."
-          else
-            git commit -m "data: regime update $(date -u +%Y-%m-%d)"
-            git push
+            echo "No changes to commit."
+            exit 0
           fi
+          git commit -m "data: regime update $(date -u +%Y-%m-%d)"
+          # 실행 도중 원격 main이 앞서갈 수 있음 -> rebase 후 push (최대 3회 재시도)
+          n=0
+          until git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; do
+            n=$((n+1))
+            if [ "$n" -ge 3 ]; then echo "push failed after $n retries"; exit 1; fi
+            echo "push race detected; retry $n..."; sleep 3
+          done
