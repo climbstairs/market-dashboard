@@ -1,123 +1,63 @@
 {
-  "updated": "2026-06-12T21:45:00Z",
+  "updated": "2026-06-07T02:18:02Z",
   "verdict": {
-    "regime": "blind_trend",
-    "label": "맹목적 추세 추종",
-    "color": "#60a5fa",
-    "strategy": "표면은 견조하나 내부·신용 경계. 추세 추종하되 헤지 동반 권고.",
-    "conflict": true
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "color": "#fbbf24",
+    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
+    "conflict": false
   },
   "stage1": {
-    "latest": {
-      "date": "06-11",
-      "name": "CPI",
-      "oc_pct": 0.81,
-      "day_pct": 0.42,
-      "vol_ratio": 1.45,
-      "pattern": "갭다운→양봉 회복",
-      "cls": "g",
-      "gap_pct": -0.9,
-      "strong_vol": true,
-      "date_full": "2026-06-11"
-    },
-    "ledger": [
-      {
-        "date": "06-11",
-        "name": "CPI",
-        "oc_pct": 0.81,
-        "vol_ratio": 1.45,
-        "pattern": "갭다운→양봉 회복",
-        "cls": "g"
-      },
-      {
-        "date": "06-05",
-        "name": "고용보고서",
-        "oc_pct": 0.55,
-        "vol_ratio": 1.12,
-        "pattern": "갭다운→양봉 회복",
-        "cls": "g"
-      },
-      {
-        "date": "05-29",
-        "name": "PCE",
-        "oc_pct": -0.34,
-        "vol_ratio": 0.98,
-        "pattern": "갭업→음봉 소멸",
-        "cls": "r"
-      },
-      {
-        "date": "05-14",
-        "name": "FOMC",
-        "oc_pct": 1.2,
-        "vol_ratio": 1.68,
-        "pattern": "갭다운→양봉 회복",
-        "cls": "g"
-      },
-      {
-        "date": "05-12",
-        "name": "CPI",
-        "oc_pct": 0.62,
-        "vol_ratio": 1.21,
-        "pattern": "갭다운→양봉 회복",
-        "cls": "g"
-      },
-      {
-        "date": "05-04",
-        "name": "고용보고서",
-        "oc_pct": -0.71,
-        "vol_ratio": 1.39,
-        "pattern": "갭업→음봉 소멸",
-        "cls": "r"
-      }
-    ],
-    "summary": "최근 6건 중 4건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "latest": null,
+    "ledger": [],
+    "summary": "이벤트 데이터 없음",
     "internals": {
-      "sphb_splv": -1.42,
-      "xly_xlp": -0.9,
-      "index_day": 0.42,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": null,
+      "xly_xlp": null,
+      "index_day": null,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.58,
-      "day_bp": 9.0
+      "level": 4.47,
+      "day_bp": -2.0
     },
     "dxy": {
-      "level": 105.2,
-      "day_pct": 0.51
+      "level": 118.88,
+      "day_pct": -0.13
     },
     "curve": {
-      "level": -0.38,
-      "prev": -0.31,
-      "inverted": true
+      "level": 0.38,
+      "prev": 0.42,
+      "inverted": false
     },
-    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
-    "context_cls": "a"
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -1.15,
-      "state": "약화 ↓",
-      "meter": 35,
-      "cls": "r"
+      "value": null,
+      "state": "데이터 없음",
+      "meter": 50,
+      "cls": "a"
     },
     "hy": {
-      "level": 3.42,
-      "chg20d": 0.28,
-      "meter": 33,
-      "alert": true
+      "level": 2.74,
+      "chg20d": -0.07,
+      "meter": 0,
+      "alert": false
     },
     "putcall": {
-      "value": 1.05,
-      "meter": 64
+      "value": null,
+      "meter": 50
     }
   },
   "status": {
     "fred_ok": true,
-    "stooq_ok": true,
-    "putcall_ok": true,
+    "stooq_ok": false,
+    "putcall_ok": false,
     "surprise_tagging": false
   }
 }
