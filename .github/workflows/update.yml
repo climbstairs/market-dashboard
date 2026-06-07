@@ -1,0 +1,43 @@
+name: Update market regime data
+
+on:
+  schedule:
+    # 평일 매일 21:45 UTC (미국 증시 마감 ~21:00 UTC 직후). KST 기준 익일 06:45.
+    - cron: "45 21 * * 1-5"
+  workflow_dispatch:        # 수동 실행 버튼
+
+permissions:
+  contents: write           # data.json / history.json 커밋 권한
+
+concurrency:
+  group: regime-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch data & run diagnostic
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python fetch_data.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "regime-bot"
+          git config user.email "actions@github.com"
+          git add data.json history.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "data: regime update $(date -u +%Y-%m-%d)"
+            git push
+          fi
