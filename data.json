@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-07T02:39:29Z",
+  "updated": "2026-06-07T02:47:52Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -69,19 +69,19 @@
   },
   "stage2": {
     "y10": {
-      "level": 4.47,
-      "day_bp": -2.0
+      "level": 4.54,
+      "day_bp": 6.0
     },
     "dxy": {
-      "level": 118.88,
-      "day_pct": -0.13
+      "level": 100.07,
+      "day_pct": 0.66
     },
     "curve": {
       "level": 0.38,
       "prev": 0.42,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
     "context_cls": "r"
   },
   "stage3": {
