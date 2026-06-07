@@ -22,6 +22,7 @@ import csv
 import json
 import datetime
 import urllib.request
+import urllib.parse
 
 FRED_KEY = os.environ.get("FRED_API_KEY", "").strip()
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,6 +42,38 @@ def _get(url, headers=None, timeout=30):
     req = urllib.request.Request(url, headers=headers or {"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace")
+
+
+def yahoo_close_series(ticker, normalize_yield=False, days=400):
+    """[(date, close)] for an index ticker (^TNX, DX-Y.NYB ...), same-day updating.
+    Returns the daily close series (tuple shape matches fred_series). [] on failure."""
+    rng = "1y" if days <= 370 else "2y"
+    url = ("https://query1.finance.yahoo.com/v8/finance/chart/"
+           + urllib.parse.quote(ticker) + f"?range={rng}&interval=1d")
+    try:
+        d = json.loads(_get(url, headers={"User-Agent": UA, "Accept": "application/json"}))
+    except Exception as e:  # noqa
+        print(f"[yahoo] {ticker} failed: {e}")
+        return []
+    res = (d.get("chart") or {}).get("result") or []
+    if not res:
+        return []
+    r0 = res[0]
+    ts = r0.get("timestamp") or []
+    c = (((r0.get("indicators") or {}).get("quote") or [{}])[0]).get("close") or []
+    out = []
+    for i, t in enumerate(ts):
+        try:
+            v = c[i]
+            if v is None:
+                continue
+            v = float(v)
+            if normalize_yield and v > 20:      # guard ^TNX x10 convention (45.0 -> 4.50)
+                v /= 10.0
+            out.append((datetime.datetime.utcfromtimestamp(t).date().isoformat(), round(v, 4)))
+        except (IndexError, TypeError, ValueError):
+            continue
+    return out
 
 
 def fred_series(series_id, days=400):
@@ -217,10 +250,12 @@ def build():
     xly = stooq_ohlc("xly.us")
     xlp = stooq_ohlc("xlp.us")
 
-    y10 = fred_series("DGS10")
+    # 금리·달러: 당일 갱신되는 야후 지수 티커 우선 (FRED는 T+1 시차 -> 이벤트 반응 누락).
+    # 실패 시 FRED로 폴백. 곡선·하이일드는 시차 무의미하므로 FRED 유지.
+    y10 = yahoo_close_series("^TNX", normalize_yield=True) or fred_series("DGS10")
+    dxy = yahoo_close_series("DX-Y.NYB") or fred_series("DTWEXBGS")
     s2s10 = fred_series("T10Y2Y")
     hy = fred_series("BAMLH0A0HYM2")
-    dxy = fred_series("DTWEXBGS")          # broad dollar index (DXY proxy)
 
     try:
         with open(os.path.join(HERE, "events.json"), encoding="utf-8") as f:
@@ -230,7 +265,7 @@ def build():
     putcall = cboe_putcall()
 
     stooq_ok = bool(spy)
-    fred_ok = bool(y10 or hy)
+    fred_ok = bool(hy or s2s10)
 
     # ---- STAGE 1: realized reaction ----
     spy_dates = {b["date"] for b in spy}
