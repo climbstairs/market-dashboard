@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시장 국면 진단 · 3단계</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d11; --bg2:#11141b; --panel:#14181f; --panel2:#1a1f28;
+    --line:#262c37; --line2:#323a47; --ink:#e8eaed; --mut:#8a93a3; --dim:#5b6373;
+    --green:#34d399; --red:#f87171; --amber:#fbbf24; --blue:#60a5fa; --violet:#a78bfa;
+    --serif:"Fraunces",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --sans:"IBM Plex Sans KR",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:
+      radial-gradient(1100px 600px at 88% -10%, rgba(96,165,250,.07), transparent 60%),
+      radial-gradient(900px 520px at -10% 105%, rgba(52,211,153,.05), transparent 55%),
+      var(--bg);
+    color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;
+    line-height:1.5;padding:clamp(18px,4vw,56px)}
+  .wrap{max-width:1120px;margin:0 auto}
+  .mast{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
+    border-bottom:1px solid var(--line);padding-bottom:18px;flex-wrap:wrap}
+  .mast h1{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.6vw,38px);letter-spacing:-.02em;line-height:1.04}
+  .mast h1 em{font-style:italic;color:var(--mut)}
+  .mast .sub{color:var(--mut);font-size:12.5px;margin-top:6px;font-family:var(--mono)}
+  .stamp{text-align:right;font-family:var(--mono);font-size:11.5px;color:var(--dim);white-space:nowrap}
+  .stamp b{color:var(--mut);font-weight:500}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
+  .ok{background:var(--green)} .warn-d{background:var(--amber)} .bad{background:var(--red)}
+  .verdict{margin-top:22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    background:linear-gradient(110deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-left:4px solid var(--blue);border-radius:14px;padding:18px 24px}
+  .verdict .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+  .verdict .lab{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;line-height:1.05;margin-top:2px}
+  .verdict .desc{flex:1;min-width:240px;color:var(--mut);font-size:14px}
+  .verdict .desc b{color:var(--ink);font-weight:600}
+  .flag{font-family:var(--mono);font-size:11px;color:var(--amber);border:1px solid #5b4a1f;background:#1d1809;border-radius:6px;padding:4px 9px;white-space:nowrap}
+  .stage{margin-top:34px;position:relative;padding-left:54px}
+  .stage::before{content:"";position:absolute;left:21px;top:6px;bottom:-34px;width:2px;background:linear-gradient(var(--stage-c),transparent)}
+  .stage:last-of-type::before{display:none}
+  .snum{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-weight:600;font-size:20px;background:var(--bg2);border:2px solid var(--stage-c);color:var(--stage-c)}
+  .shead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .shead h2{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:-.01em}
+  .tempo{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--stage-c);border-radius:5px;padding:2px 7px;font-weight:600}
+  .squestion{color:var(--mut);font-size:13px;margin-top:3px;font-style:italic}
+  .s1{--stage-c:var(--green)} .s2{--stage-c:var(--violet)} .s3{--stage-c:var(--blue)}
+  .row{margin-top:16px;display:grid;gap:14px}
+  .cols-2{grid-template-columns:minmax(280px,1.05fr) 1fr}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.cols-2,.cols-3{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px}
+  .card h3{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:12px}
+  .big{font-family:var(--mono);font-weight:600;font-size:30px;letter-spacing:-.02em}
+  .sm{font-family:var(--mono);font-size:12.5px;color:var(--mut);margin-top:3px}
+  .up{color:var(--red)} .down{color:var(--green)} .neu{color:var(--mut)}
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:5px;padding:3px 8px;margin-top:10px}
+  .tag.g{color:var(--green);background:#0f211a;border:1px solid #1c3b30}
+  .tag.r{color:var(--red);background:#241011;border:1px solid #45211f}
+  .tag.a{color:var(--amber);background:#1d1809;border:1px solid #4a3c17}
+  .candle-wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .candle-meta{flex:1;min-width:180px}
+  .ev-name{font-family:var(--serif);font-size:22px;font-weight:600}
+  .ev-date{font-family:var(--mono);font-size:12px;color:var(--mut)}
+  .metric-line{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+  .metric-line .m .v{font-family:var(--mono);font-size:19px;font-weight:600}
+  .metric-line .m .l{font-size:11px;color:var(--mut)}
+  .ledger{width:100%;border-collapse:collapse;font-size:13px}
+  .ledger th{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+  .ledger td{padding:8px;border-bottom:1px solid var(--line2);color:var(--mut)}
+  .ledger td.d{font-family:var(--mono);color:var(--ink)}
+  .ledger .mini{font-family:var(--mono);font-weight:600}
+  .ratio{display:flex;align-items:center;gap:10px;margin-top:8px}
+  .ratio .name{font-size:12.5px;color:var(--mut);width:122px}
+  .ratio .name small{font-size:10px;color:var(--dim)}
+  .ratio .track{flex:1;height:8px;background:#0c0f15;border:1px solid var(--line);border-radius:5px;position:relative}
+  .ratio .mid{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--line2)}
+  .ratio .fill{position:absolute;top:0;bottom:0;border-radius:5px}
+  .ratio .v{font-family:var(--mono);font-size:12px;width:54px;text-align:right}
+  .read{background:var(--panel2);border:1px dashed var(--line2);border-radius:11px;padding:14px 16px;margin-top:14px;font-size:14px}
+  .read .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);display:block;margin-bottom:5px}
+  .read b{color:var(--ink)}
+  .gauge .big{font-size:26px}
+  .meter{height:7px;background:#0c0f15;border:1px solid var(--line);border-radius:5px;margin-top:12px;overflow:hidden}
+  .meter .f{height:100%;border-radius:5px;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+  .strip{margin-top:18px;display:flex;gap:3px;flex-wrap:wrap}
+  .cell{width:15px;height:24px;border-radius:3px;opacity:.85;position:relative}
+  .cell.cf::after{content:"";position:absolute;top:2px;right:2px;width:4px;height:4px;border-radius:50%;background:#1d1809;border:1px solid var(--amber)}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--mut)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:3px}
+  .sec{margin-top:40px;display:flex;align-items:baseline;gap:12px}
+  .sec h2{font-family:var(--serif);font-weight:600;font-size:20px}
+  .sec .ln{flex:1;height:1px;background:var(--line)}
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;color:var(--dim);font-size:11.5px;line-height:1.7}
+  footer .warn{color:var(--amber)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <h1>시장 국면 진단 <em>· 3단계 아키텍처</em></h1>
+      <div class="sub">반응(Fast) → 맥락(Fast) → 상태(Slow)</div>
+    </div>
+    <div class="stamp" id="stamp">로딩 중…</div>
+  </header>
+
+  <div class="verdict" id="verdict"></div>
+
+  <section class="stage s1">
+    <div class="snum">1</div>
+    <div class="shead"><h2>실현된 반응</h2><span class="tempo">Fast · 직접 관측</span></div>
+    <div class="squestion">"오늘 터진 뉴스에 시장은 실제로 어떻게 움직였나?" — 가격 궤적 그대로</div>
+    <div class="row cols-2">
+      <div class="card" id="candle-card"></div>
+      <div class="card" id="internals-card"></div>
+    </div>
+    <div class="card" id="ledger-card" style="margin-top:14px"></div>
+  </section>
+
+  <section class="stage s2">
+    <div class="snum">2</div>
+    <div class="shead"><h2>크로스 에셋 해석기</h2><span class="tempo">Fast · 매크로 맥락</span></div>
+    <div class="squestion">"주식의 그 반응은 어떤 매크로 논리에서 비롯됐나?" — 왜(Why)의 마스터키</div>
+    <div class="row cols-3" id="ctx-cards"></div>
+    <div class="read" id="ctx-read"></div>
+  </section>
+
+  <section class="stage s3">
+    <div class="snum">3</div>
+    <div class="shead"><h2>구조적 기저 상태</h2><span class="tempo">Slow · 잠재력 진단</span></div>
+    <div class="squestion">"다음 뉴스를 받아낼 체력과 포지셔닝은? — CNN 폐기, 독립 뼈대 3개만"</div>
+    <div class="row cols-3" id="struct-cards"></div>
+  </section>
+
+  <div class="sec"><h2>국면 타임라인</h2><div class="ln"></div></div>
+  <div class="strip" id="strip"></div>
+  <div class="legend" id="legend"></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const REG_COLOR={healthy:"#34d399",stress:"#f87171",complacency:"#fbbf24",blind_trend:"#60a5fa"};
+const REG_LABEL={healthy:"호재 민감 장세",stress:"악재 민감 장세",complacency:"호재 둔감 (고점 경계)",blind_trend:"맹목적 추세 추종"};
+const FB={
+  "updated": "2026-06-12T21:45:00Z",
+  "verdict": {
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "color": "#60a5fa",
+    "strategy": "표면은 견조하나 내부·신용 경계. 추세 추종하되 헤지 동반 권고.",
+    "conflict": true
+  },
+  "stage1": {
+    "latest": {
+      "date": "06-11",
+      "name": "CPI",
+      "oc_pct": 0.81,
+      "day_pct": 0.42,
+      "vol_ratio": 1.45,
+      "pattern": "갭다운→양봉 회복",
+      "cls": "g",
+      "gap_pct": -0.9,
+      "strong_vol": true,
+      "date_full": "2026-06-11"
+    },
+    "ledger": [
+      {
+        "date": "06-11",
+        "name": "CPI",
+        "oc_pct": 0.81,
+        "vol_ratio": 1.45,
+        "pattern": "갭다운→양봉 회복",
+        "cls": "g"
+      },
+      {
+        "date": "06-05",
+        "name": "고용보고서",
+        "oc_pct": 0.55,
+        "vol_ratio": 1.12,
+        "pattern": "갭다운→양봉 회복",
+        "cls": "g"
+      },
+      {
+        "date": "05-29",
+        "name": "PCE",
+        "oc_pct": -0.34,
+        "vol_ratio": 0.98,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      },
+      {
+        "date": "05-14",
+        "name": "FOMC",
+        "oc_pct": 1.2,
+        "vol_ratio": 1.68,
+        "pattern": "갭다운→양봉 회복",
+        "cls": "g"
+      },
+      {
+        "date": "05-12",
+        "name": "CPI",
+        "oc_pct": 0.62,
+        "vol_ratio": 1.21,
+        "pattern": "갭다운→양봉 회복",
+        "cls": "g"
+      },
+      {
+        "date": "05-04",
+        "name": "고용보고서",
+        "oc_pct": -0.71,
+        "vol_ratio": 1.39,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      }
+    ],
+    "summary": "최근 6건 중 4건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "internals": {
+      "sphb_splv": -1.42,
+      "xly_xlp": -0.9,
+      "index_day": 0.42,
+      "riskoff": true,
+      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+    }
+  },
+  "stage2": {
+    "y10": {
+      "level": 4.58,
+      "day_bp": 9.0
+    },
+    "dxy": {
+      "level": 105.2,
+      "day_pct": 0.51
+    },
+    "curve": {
+      "level": -0.38,
+      "prev": -0.31,
+      "inverted": true
+    },
+    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
+    "context_cls": "a"
+  },
+  "stage3": {
+    "breadth": {
+      "value": -1.15,
+      "state": "약화 ↓",
+      "meter": 35,
+      "cls": "r"
+    },
+    "hy": {
+      "level": 3.42,
+      "chg20d": 0.28,
+      "meter": 33,
+      "alert": true
+    },
+    "putcall": {
+      "value": 1.05,
+      "meter": 64
+    }
+  },
+  "status": {
+    "fred_ok": true,
+    "stooq_ok": true,
+    "putcall_ok": true,
+    "surprise_tagging": false
+  }
+}, FBH=[
+  {
+    "date": "2026-05-04",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-05",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-06",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-07",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-08",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-12",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-13",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-14",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-15",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-18",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-19",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-20",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-21",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-22",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-25",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-26",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-27",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-28",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-29",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-06-01",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-06-02",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-03",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-04",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-05",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": false
+  }
+];
+
+async function load(name,fb){try{const r=await fetch(name+"?t="+Date.now());if(!r.ok)throw 0;return await r.json();}catch(e){return fb;}}
+const sign=(v,s="")=>v==null?"—":(v>0?"+":"")+v+s;
+const cls3=c=>({g:"g",r:"r",a:"a"}[c]||"a");
+
+function candleSVG(gap,oc){
+  if(gap==null||oc==null) return "";
+  const sc=32, pcY=58;                        // prior close y, 1% = 32px
+  const openY=pcY - gap*sc;
+  const closeY=openY - oc*sc;
+  const green=closeY<openY;
+  const top=Math.min(openY,closeY), bot=Math.max(openY,closeY);
+  const col=green?"#34d399":"#f87171";
+  const wickTop=top-14, wickBot=bot+14;
+  return `<svg width="120" height="200" viewBox="0 0 120 200">
+    <line x1="8" y1="${pcY}" x2="112" y2="${pcY}" stroke="#5b6373" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="8" y="${pcY-6}" fill="#8a93a3" font-family="IBM Plex Mono" font-size="9">전일 종가</text>
+    <line x1="60" y1="${wickTop}" x2="60" y2="${wickBot}" stroke="${col}" stroke-width="2"/>
+    <rect x="46" y="${top}" width="28" height="${Math.max(bot-top,3)}" rx="2" fill="${col}"/>
+    <line x1="30" y1="${openY}" x2="46" y2="${openY}" stroke="#8a93a3" stroke-width="1"/>
+    <text x="2" y="${openY+3}" fill="#8a93a3" font-family="IBM Plex Mono" font-size="9">시가</text>
+    <line x1="74" y1="${closeY}" x2="92" y2="${closeY}" stroke="#e8eaed" stroke-width="1"/>
+    <text x="78" y="${closeY+3}" fill="#e8eaed" font-family="IBM Plex Mono" font-size="9">종가</text>
+    <text x="-30" y="14" fill="#f87171" font-family="IBM Plex Mono" font-size="9"
+      transform="rotate(-90 14 ${(pcY+openY)/2})" x="14" y="${(pcY+openY)/2}">갭 ${sign(gap,"%")}</text>
+  </svg>`;
+}
+
+function render(d,hist){
+  const st=d.status||{};
+  document.getElementById("stamp").innerHTML=
+    `<b>최종 갱신</b> ${d.updated}<br>
+     <span class="dot ${st.fred_ok?'ok':'bad'}"></span>FRED
+     <span class="dot ${st.stooq_ok?'ok':'bad'}" style="margin-left:8px"></span>OHLC
+     <span class="dot ${st.putcall_ok?'ok':'warn-d'}" style="margin-left:8px"></span>풋콜
+     <span class="dot warn-d" style="margin-left:8px"></span>서프라이즈 OFF`;
+
+  // verdict
+  const v=d.verdict, vc=v.color||REG_COLOR[v.regime];
+  const ve=document.getElementById("verdict");
+  ve.style.borderLeftColor=vc;
+  ve.innerHTML=`<div><div class="k">종합 판정</div><div class="lab" style="color:${vc}">${v.label}</div></div>
+    <div class="desc">${v.strategy}</div>
+    ${v.conflict?'<div class="flag">⚠ 1·3단계 괴리 감지</div>':''}`;
+
+  // stage 1 - candle
+  const L=d.stage1.latest||{};
+  document.getElementById("candle-card").innerHTML=
+    `<h3>최근 매크로 이벤트 · OHLC 궤적</h3>
+     <div class="candle-wrap">${candleSVG(L.gap_pct,L.oc_pct)}
+       <div class="candle-meta">
+         <div class="ev-name">${L.name||"—"}</div>
+         <div class="ev-date">${L.date_full||""}</div>
+         <div class="metric-line">
+           <div class="m"><div class="v ${L.oc_pct>=0?'down':'up'}">${sign(L.oc_pct,"%")}</div><div class="l">시가→종가</div></div>
+           <div class="m"><div class="v ${L.day_pct>=0?'down':'up'}">${sign(L.day_pct,"%")}</div><div class="l">일간 종가</div></div>
+           <div class="m"><div class="v ${L.strong_vol?'up':'neu'}">${L.vol_ratio!=null?Math.round(L.vol_ratio*100)+'%':'—'}</div><div class="l">거래량/20일</div></div>
+         </div>
+         <span class="tag ${cls3(L.cls)}">${L.pattern||""}${L.strong_vol?" + 거래량 동반":""}</span>
+       </div></div>`;
+
+  // stage 1 - internals
+  const I=d.stage1.internals||{};
+  const ratioBar=(val)=>{
+    if(val==null) return '<div class="track"><span class="mid"></span></div>';
+    const w=Math.min(Math.abs(val)*15,48), neg=val<0;
+    const col=neg?"#f87171":"#34d399";
+    const pos=neg?`right:50%;`:`left:50%;`;
+    return `<div class="track"><span class="mid"></span><span class="fill" style="${pos}width:${w}%;background:${col}"></span></div>`;
+  };
+  document.getElementById("internals-card").innerHTML=
+    `<h3>지수 껍데기 vs 내부 (섹터 로테이션)</h3>
+     <div class="big neu">${sign(I.index_day,"%")} <span style="font-size:13px;color:var(--mut)">지수</span></div>
+     <div class="sm">당일 표면 vs 내부 베타 식욕</div>
+     <div style="margin-top:12px">
+       <div class="ratio"><span class="name">SPHB / SPLV<br><small>고베타/저변동</small></span>${ratioBar(I.sphb_splv)}<span class="v ${I.sphb_splv<0?'up':'down'}">${sign(I.sphb_splv,"%")}</span></div>
+       <div class="ratio"><span class="name">XLY / XLP<br><small>소비재 경기/필수</small></span>${ratioBar(I.xly_xlp)}<span class="v ${I.xly_xlp<0?'up':'down'}">${sign(I.xly_xlp,"%")}</span></div>
+     </div>
+     <span class="tag ${I.riskoff?'r':'g'}">${I.tag||""}</span>`;
+
+  // stage 1 - ledger
+  const rows=(d.stage1.ledger||[]).map(x=>
+    `<tr><td class="d">${x.date}</td><td>${x.name}</td>
+      <td class="mini ${x.oc_pct>=0?'down':'up'}">${sign(x.oc_pct,"%")}</td>
+      <td class="mini ${x.vol_ratio>=1.3?'up':''}">${x.vol_ratio!=null?Math.round(x.vol_ratio*100)+'%':'—'}</td>
+      <td>${x.pattern}</td></tr>`).join("");
+  document.getElementById("ledger-card").innerHTML=
+    `<h3>이벤트 반응 원장 · 최근 ${(d.stage1.ledger||[]).length}건 (단일 캔들=n1 노이즈 → 연속 패턴 판독)</h3>
+     <table class="ledger"><thead><tr><th>날짜</th><th>이벤트</th><th>시가→종가</th><th>거래량/20d</th><th>반응 패턴</th></tr></thead>
+     <tbody>${rows}</tbody></table>
+     <span class="tag g">${d.stage1.summary||""}</span>`;
+
+  // stage 2
+  const s2=d.stage2, y=s2.y10||{}, dx=s2.dxy||{}, cv=s2.curve||{};
+  document.getElementById("ctx-cards").innerHTML=
+    `<div class="card"><h3>美 10년물 금리</h3><div class="big ${y.day_bp>0?'up':'down'}">${y.level!=null?y.level+'%':'—'}</div>
+       <div class="sm ${y.day_bp>0?'up':'down'}">당일 ${sign(y.day_bp,'bp')}</div>
+       <span class="tag ${y.day_bp>2?'a':'g'}">${y.day_bp>2?'금리 동반 상승':'금리 안정'}</span></div>
+     <div class="card"><h3>달러 인덱스 (broad)</h3><div class="big ${dx.day_pct>0?'up':'down'}">${dx.level!=null?dx.level:'—'}</div>
+       <div class="sm ${dx.day_pct>0?'up':'down'}">당일 ${sign(dx.day_pct,'%')}</div>
+       <span class="tag ${dx.day_pct>0.1?'a':'g'}">${dx.day_pct>0.1?'달러 강세':'달러 안정'}</span></div>
+     <div class="card"><h3>장단기 스프레드 (2s10s)</h3><div class="big ${cv.level<0?'down':'neu'}">${cv.level!=null?sign(cv.level,'%'):'—'}</div>
+       <div class="sm">전일 ${cv.prev!=null?sign(cv.prev,'%'):'—'} ${cv.inverted?'· 역전':''}</div>
+       <span class="tag ${cv.inverted?'r':'g'}">${cv.inverted?'채권시장 경계':'곡선 정상화'}</span></div>`;
+  document.getElementById("ctx-read").innerHTML=
+    `<span class="lab">해석 (Stock × Rates × Dollar)</span>${s2.context||""}`;
+  document.querySelector("#ctx-read").style.borderColor=
+    ({g:"#1c3b30",r:"#45211f",a:"#4a3c17"}[s2.context_cls]||"var(--line2)");
+
+  // stage 3
+  const b=d.stage3.breadth||{}, h=d.stage3.hy||{}, pc=d.stage3.putcall||{};
+  document.getElementById("struct-cards").innerHTML=
+    `<div class="card gauge"><h3>A/D 폭 · RSP/SPY (CNN 대체)</h3>
+       <div class="big ${b.cls=='r'?'up':(b.cls=='g'?'down':'neu')}">${b.state||'—'}</div>
+       <div class="sm">20일 RSP/SPY ${sign(b.value,'%')} ${b.cls=='r'?'(지수와 괴리)':''}</div>
+       <div class="meter"><span class="f" data-w="${b.meter||0}" style="background:${b.cls=='r'?'var(--red)':(b.cls=='g'?'var(--green)':'var(--amber)')}"></span></div>
+       <span class="tag ${cls3(b.cls)}">${b.cls=='r'?'소수 대형주 주도 — 추세 체력 의심':(b.cls=='g'?'광범위 참여 — 추세 견조':'중립')}</span></div>
+     <div class="card gauge"><h3>하이일드 스프레드</h3>
+       <div class="big ${h.alert?'up':'neu'}">${h.level!=null?h.level+'%':'—'}</div>
+       <div class="sm ${h.chg20d>0?'up':'down'}">20일 ${sign(h.chg20d,'%p')} ${h.alert?'· 확대':''}</div>
+       <div class="meter"><span class="f" data-w="${h.meter||0}" style="background:${h.alert?'var(--amber)':'var(--green)'}"></span></div>
+       <span class="tag ${h.alert?'a':'g'}">${h.alert?'신용 위험 누적 — 하락 취약도 ↑':'신용 안정'}</span></div>
+     <div class="card gauge"><h3>풋 / 콜 비율</h3>
+       <div class="big neu">${pc.value!=null?pc.value:'—'}</div>
+       <div class="sm">${pc.value!=null?(pc.value>1?'1.0 상회 · 헤지 강화':'1.0 하회 · 공격적'):'데이터 없음 (CBOE)'}</div>
+       <div class="meter"><span class="f" data-w="${pc.meter||0}" style="background:var(--blue)"></span></div>
+       <span class="tag ${pc.value>1?'g':(pc.value!=null?'a':'a')}">${pc.value>1?'하방 보험 두꺼움 → 반등 잠재력':(pc.value!=null?'헤지 얇음 → 급락 취약':'풋콜 미수집 시 수동 입력 가능')}</span></div>`;
+
+  // timeline
+  if(hist&&hist.length){
+    document.getElementById("strip").innerHTML=hist.map(x=>
+      `<div class="cell ${x.conflict?'cf':''}" title="${x.date} · ${x.label}${x.conflict?' (괴리)':''}" style="background:${REG_COLOR[x.regime]||'#333'}"></div>`).join("");
+    document.getElementById("legend").innerHTML=
+      Object.keys(REG_LABEL).map(k=>`<span><i class="sw" style="background:${REG_COLOR[k]}"></i>${REG_LABEL[k]}</span>`).join("")
+      +`<span><i class="sw" style="background:#1d1809;border:1px solid var(--amber)"></i>괴리 표시</span>`;
+  }
+
+  document.getElementById("foot").innerHTML=
+    `데이터 출처: FRED(금리·하이일드·달러), Stooq(지수·섹터 ETF OHLC·거래량), CBOE(풋콜).
+     <span class="warn">서프라이즈 태깅 OFF — 1단계는 뉴스 호악재가 아닌 가격 반응의 형태만 표기.</span>
+     CNN 공포/탐욕 지수는 중복성 때문에 폐기, 시장 폭은 RSP/SPY로 독립 측정.<br>
+     참고용 도구이며 투자 자문이 아닙니다. 모든 판단과 책임은 이용자 본인에게 있습니다.`;
+
+  requestAnimationFrame(()=>document.querySelectorAll(".meter .f").forEach(f=>f.style.width=f.dataset.w+"%"));
+}
+
+(async()=>{ render(await load("data.json",FB), await load("history.json",FBH)); })();
+</script>
+</body>
+</html>

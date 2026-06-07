@@ -1,0 +1,152 @@
+[
+  {
+    "date": "2026-05-04",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-05",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-06",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-07",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-08",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-12",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-13",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-14",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-15",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-18",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-19",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-20",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-21",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-22",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-25",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-26",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-27",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-28",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-05-29",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-06-01",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
+  },
+  {
+    "date": "2026-06-02",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-03",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-04",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
+  },
+  {
+    "date": "2026-06-05",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": false
+  }
+]
