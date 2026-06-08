@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-07T02:47:52Z",
+  "updated": "2026-06-08T23:03:57Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -60,40 +60,40 @@
     ],
     "summary": "최근 4건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -7.02,
-      "xly_xlp": -3.69,
-      "index_day": -2.58,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 3.26,
+      "xly_xlp": 0.91,
+      "index_day": 0.23,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.54,
-      "day_bp": 6.0
+      "level": 4.55,
+      "day_bp": 2.0
     },
     "dxy": {
-      "level": 100.07,
-      "day_pct": 0.66
+      "level": 100.0,
+      "day_pct": -0.07
     },
     "curve": {
-      "level": 0.38,
-      "prev": 0.42,
+      "level": 0.41,
+      "prev": 0.38,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
-    "context_cls": "r"
+    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
+    "context_cls": "g"
   },
   "stage3": {
     "breadth": {
-      "value": 1.28,
+      "value": 1.5,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.74,
-      "chg20d": -0.07,
+      "level": 2.76,
+      "chg20d": -0.03,
       "meter": 0,
       "alert": false
     },
