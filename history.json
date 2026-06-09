@@ -160,5 +160,11 @@
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
     "conflict": false
+  },
+  {
+    "date": "2026-06-09",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
   }
 ]
