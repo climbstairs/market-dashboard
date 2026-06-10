@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-09T23:04:42Z",
+  "updated": "2026-06-10T23:15:10Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "06-05",
-      "name": "고용보고서",
-      "oc_pct": -1.96,
-      "day_pct": -2.58,
-      "vol_ratio": 2.01,
+      "date": "06-10",
+      "name": "CPI",
+      "oc_pct": -1.09,
+      "day_pct": -1.58,
+      "vol_ratio": 1.13,
       "pattern": "갭다운→음봉 (투매 지속)",
       "cls": "r",
-      "gap_pct": -0.63,
-      "date_full": "2026-06-05",
-      "strong_vol": true
+      "gap_pct": -0.5,
+      "date_full": "2026-06-10",
+      "strong_vol": false
     },
     "ledger": [
+      {
+        "date": "06-10",
+        "name": "CPI",
+        "oc_pct": -1.09,
+        "day_pct": -1.58,
+        "vol_ratio": 1.13,
+        "pattern": "갭다운→음봉 (투매 지속)",
+        "cls": "r"
+      },
       {
         "date": "06-05",
         "name": "고용보고서",
@@ -58,27 +67,27 @@
         "cls": "g"
       }
     ],
-    "summary": "최근 4건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "summary": "최근 5건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -2.24,
-      "xly_xlp": -0.81,
-      "index_day": -0.29,
+      "sphb_splv": -3.93,
+      "xly_xlp": -3.65,
+      "index_day": -1.58,
       "riskoff": true,
       "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.53,
-      "day_bp": -2.0
+      "level": 4.54,
+      "day_bp": 1.0
     },
     "dxy": {
-      "level": 100.0,
-      "day_pct": -0.05
+      "level": 99.91,
+      "day_pct": -0.14
     },
     "curve": {
-      "level": 0.4,
-      "prev": 0.41,
+      "level": 0.42,
+      "prev": 0.4,
       "inverted": false
     },
     "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
@@ -86,14 +95,14 @@
   },
   "stage3": {
     "breadth": {
-      "value": 2.86,
+      "value": 3.12,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.75,
-      "chg20d": -0.07,
+      "level": 2.78,
+      "chg20d": -0.04,
       "meter": 0,
       "alert": false
     },
