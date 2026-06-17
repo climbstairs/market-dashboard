@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T23:11:06Z",
+  "updated": "2026-06-17T23:08:31Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "06-10",
-      "name": "CPI",
-      "oc_pct": -1.09,
-      "day_pct": -1.58,
-      "vol_ratio": 1.18,
-      "pattern": "갭다운→음봉 (투매 지속)",
-      "cls": "r",
-      "gap_pct": -0.5,
-      "date_full": "2026-06-10",
-      "strong_vol": false
+      "date": "06-17",
+      "name": "FOMC",
+      "oc_pct": -1.37,
+      "day_pct": -1.25,
+      "vol_ratio": 1.54,
+      "pattern": "보합권 반응",
+      "cls": "a",
+      "gap_pct": 0.13,
+      "date_full": "2026-06-17",
+      "strong_vol": true
     },
     "ledger": [
+      {
+        "date": "06-17",
+        "name": "FOMC",
+        "oc_pct": -1.37,
+        "day_pct": -1.25,
+        "vol_ratio": 1.54,
+        "pattern": "보합권 반응",
+        "cls": "a"
+      },
       {
         "date": "06-10",
         "name": "CPI",
@@ -67,27 +76,27 @@
         "cls": "g"
       }
     ],
-    "summary": "최근 5건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "summary": "최근 6건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -1.91,
-      "xly_xlp": -0.22,
-      "index_day": -0.6,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 0.94,
+      "xly_xlp": -0.28,
+      "index_day": -1.25,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.43,
-      "day_bp": -6.0
+      "level": 4.46,
+      "day_bp": -2.0
     },
     "dxy": {
-      "level": 99.54,
-      "day_pct": -0.09
+      "level": 100.39,
+      "day_pct": 0.85
     },
     "curve": {
-      "level": 0.38,
-      "prev": 0.4,
+      "level": 0.29,
+      "prev": 0.38,
       "inverted": false
     },
     "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
@@ -95,14 +104,14 @@
   },
   "stage3": {
     "breadth": {
-      "value": 2.99,
+      "value": 2.64,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.66,
-      "chg20d": -0.2,
+      "level": 2.71,
+      "chg20d": -0.09,
       "meter": 0,
       "alert": false
     },
