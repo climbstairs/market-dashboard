@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T23:08:31Z",
+  "updated": "2026-06-18T23:24:29Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -13,7 +13,7 @@
       "name": "FOMC",
       "oc_pct": -1.37,
       "day_pct": -1.25,
-      "vol_ratio": 1.54,
+      "vol_ratio": 1.56,
       "pattern": "보합권 반응",
       "cls": "a",
       "gap_pct": 0.13,
@@ -26,7 +26,7 @@
         "name": "FOMC",
         "oc_pct": -1.37,
         "day_pct": -1.25,
-        "vol_ratio": 1.54,
+        "vol_ratio": 1.56,
         "pattern": "보합권 반응",
         "cls": "a"
       },
@@ -78,40 +78,40 @@
     ],
     "summary": "최근 6건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.94,
-      "xly_xlp": -0.28,
-      "index_day": -1.25,
+      "sphb_splv": 3.07,
+      "xly_xlp": 1.91,
+      "index_day": 0.78,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.46,
-      "day_bp": -2.0
+      "level": 4.45,
+      "day_bp": -4.0
     },
     "dxy": {
-      "level": 100.39,
-      "day_pct": 0.85
+      "level": 100.81,
+      "day_pct": 0.72
     },
     "curve": {
-      "level": 0.29,
-      "prev": 0.38,
+      "level": 0.27,
+      "prev": 0.29,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
-    "context_cls": "r"
+    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
+    "context_cls": "a"
   },
   "stage3": {
     "breadth": {
-      "value": 2.64,
+      "value": 2.25,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.71,
-      "chg20d": -0.09,
+      "level": 2.63,
+      "chg20d": -0.15,
       "meter": 0,
       "alert": false
     },
