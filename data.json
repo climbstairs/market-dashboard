@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T23:24:29Z",
+  "updated": "2026-06-19T22:38:44Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -87,20 +87,20 @@
   },
   "stage2": {
     "y10": {
-      "level": 4.45,
-      "day_bp": -4.0
+      "level": 4.49,
+      "day_bp": 2.0
     },
     "dxy": {
-      "level": 100.81,
-      "day_pct": 0.72
+      "level": 100.85,
+      "day_pct": -0.0
     },
     "curve": {
       "level": 0.27,
       "prev": 0.29,
       "inverted": false
     },
-    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
-    "context_cls": "a"
+    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
+    "context_cls": "g"
   },
   "stage3": {
     "breadth": {
