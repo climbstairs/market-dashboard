@@ -262,5 +262,11 @@
     "regime": "stress",
     "label": "악재 민감 장세",
     "conflict": false
+  },
+  {
+    "date": "2026-07-02",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T22:52:51Z",
+  "updated": "2026-07-02T22:47:02Z",
   "verdict": {
     "regime": "stress",
     "label": "악재 민감 장세",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "06-25",
-      "name": "PCE",
-      "oc_pct": -0.62,
-      "day_pct": 0.14,
-      "vol_ratio": 0.89,
+      "date": "07-02",
+      "name": "고용보고서",
+      "oc_pct": -0.35,
+      "day_pct": -0.13,
+      "vol_ratio": 0.73,
       "pattern": "갭업→음봉 소멸",
       "cls": "r",
-      "gap_pct": 0.77,
-      "date_full": "2026-06-25",
+      "gap_pct": 0.22,
+      "date_full": "2026-07-02",
       "strong_vol": false
     },
     "ledger": [
+      {
+        "date": "07-02",
+        "name": "고용보고서",
+        "oc_pct": -0.35,
+        "day_pct": -0.13,
+        "vol_ratio": 0.73,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      },
       {
         "date": "06-25",
         "name": "PCE",
@@ -65,38 +74,29 @@
         "vol_ratio": 0.87,
         "pattern": "보합권 반응",
         "cls": "a"
-      },
-      {
-        "date": "05-12",
-        "name": "CPI",
-        "oc_pct": 0.18,
-        "day_pct": -0.15,
-        "vol_ratio": 1.08,
-        "pattern": "갭다운→양봉 회복",
-        "cls": "g"
       }
     ],
-    "summary": "최근 6건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -2.56,
-      "xly_xlp": 0.41,
-      "index_day": -0.14,
+      "sphb_splv": -4.81,
+      "xly_xlp": -2.79,
+      "index_day": -0.13,
       "riskoff": true,
       "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.47,
-      "day_bp": 10.0
+      "level": 4.49,
+      "day_bp": 11.0
     },
     "dxy": {
-      "level": 101.41,
-      "day_pct": 0.22
+      "level": 100.85,
+      "day_pct": -0.53
     },
     "curve": {
-      "level": 0.31,
-      "prev": 0.3,
+      "level": 0.35,
+      "prev": 0.31,
       "inverted": false
     },
     "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
@@ -104,14 +104,14 @@
   },
   "stage3": {
     "breadth": {
-      "value": 3.49,
+      "value": 4.01,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.75,
-      "chg20d": 0.04,
+      "level": 2.74,
+      "chg20d": -0.01,
       "meter": 0,
       "alert": false
     },
