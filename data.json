@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-02T22:47:02Z",
+  "updated": "2026-07-03T22:42:59Z",
   "verdict": {
-    "regime": "stress",
-    "label": "악재 민감 장세",
-    "color": "#f87171",
-    "strategy": "현금 비중 확대, 펀더멘탈 확실한 방어주 위주 재편.",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "color": "#fbbf24",
+    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
     "conflict": false
   },
   "stage1": {
@@ -13,7 +13,7 @@
       "name": "고용보고서",
       "oc_pct": -0.35,
       "day_pct": -0.13,
-      "vol_ratio": 0.73,
+      "vol_ratio": 0.89,
       "pattern": "갭업→음봉 소멸",
       "cls": "r",
       "gap_pct": 0.22,
@@ -26,7 +26,7 @@
         "name": "고용보고서",
         "oc_pct": -0.35,
         "day_pct": -0.13,
-        "vol_ratio": 0.73,
+        "vol_ratio": 0.89,
         "pattern": "갭업→음봉 소멸",
         "cls": "r"
       },
@@ -87,19 +87,19 @@
   },
   "stage2": {
     "y10": {
-      "level": 4.49,
-      "day_bp": 11.0
+      "level": 4.37,
+      "day_bp": -2.0
     },
     "dxy": {
-      "level": 100.85,
-      "day_pct": -0.53
+      "level": 100.86,
+      "day_pct": -0.0
     },
     "curve": {
       "level": 0.35,
       "prev": 0.31,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
     "context_cls": "r"
   },
   "stage3": {
@@ -110,8 +110,8 @@
       "cls": "g"
     },
     "hy": {
-      "level": 2.74,
-      "chg20d": -0.01,
+      "level": 2.75,
+      "chg20d": 0.01,
       "meter": 0,
       "alert": false
     },

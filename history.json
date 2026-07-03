@@ -268,5 +268,11 @@
     "regime": "stress",
     "label": "악재 민감 장세",
     "conflict": false
+  },
+  {
+    "date": "2026-07-03",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
   }
 ]
