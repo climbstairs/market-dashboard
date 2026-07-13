@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T22:41:32Z",
+  "updated": "2026-07-13T22:39:27Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -78,40 +78,40 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.57,
-      "xly_xlp": -0.76,
-      "index_day": 0.43,
+      "sphb_splv": -3.24,
+      "xly_xlp": -1.57,
+      "index_day": -0.77,
       "riskoff": true,
       "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.57,
-      "day_bp": 3.0
+      "level": 4.61,
+      "day_bp": 4.0
     },
     "dxy": {
-      "level": 100.97,
-      "day_pct": 0.02
+      "level": 101.28,
+      "day_pct": 0.3
     },
     "curve": {
-      "level": 0.35,
-      "prev": 0.38,
+      "level": 0.36,
+      "prev": 0.35,
       "inverted": false
     },
-    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
-    "context_cls": "a"
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -0.3,
-      "state": "중립",
-      "meter": 55,
-      "cls": "a"
+      "value": 0.58,
+      "state": "광범위 ↑",
+      "meter": 75,
+      "cls": "g"
     },
     "hy": {
-      "level": 2.7,
-      "chg20d": -0.08,
+      "level": 2.69,
+      "chg20d": -0.02,
       "meter": 0,
       "alert": false
     },
