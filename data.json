@@ -1,26 +1,35 @@
 {
-  "updated": "2026-07-13T22:39:27Z",
+  "updated": "2026-07-14T22:39:52Z",
   "verdict": {
-    "regime": "complacency",
-    "label": "호재 둔감 (고점 경계)",
-    "color": "#fbbf24",
-    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "color": "#34d399",
+    "strategy": "표면·내부가 함께 견조. 주도주 매수, 가벼운 악재는 저가매수 기회.",
     "conflict": false
   },
   "stage1": {
     "latest": {
-      "date": "07-02",
-      "name": "고용보고서",
-      "oc_pct": -0.35,
-      "day_pct": -0.13,
-      "vol_ratio": 0.89,
-      "pattern": "갭업→음봉 소멸",
-      "cls": "r",
-      "gap_pct": 0.22,
-      "date_full": "2026-07-02",
+      "date": "07-14",
+      "name": "CPI",
+      "oc_pct": 0.12,
+      "day_pct": 0.36,
+      "vol_ratio": 0.61,
+      "pattern": "갭업→양봉 지속",
+      "cls": "g",
+      "gap_pct": 0.23,
+      "date_full": "2026-07-14",
       "strong_vol": false
     },
     "ledger": [
+      {
+        "date": "07-14",
+        "name": "CPI",
+        "oc_pct": 0.12,
+        "day_pct": 0.36,
+        "vol_ratio": 0.61,
+        "pattern": "갭업→양봉 지속",
+        "cls": "g"
+      },
       {
         "date": "07-02",
         "name": "고용보고서",
@@ -65,53 +74,44 @@
         "vol_ratio": 2.01,
         "pattern": "갭다운→음봉 (투매 지속)",
         "cls": "r"
-      },
-      {
-        "date": "05-28",
-        "name": "PCE",
-        "oc_pct": 0.58,
-        "day_pct": 0.55,
-        "vol_ratio": 0.87,
-        "pattern": "보합권 반응",
-        "cls": "a"
       }
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -3.24,
-      "xly_xlp": -1.57,
-      "index_day": -0.77,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 2.12,
+      "xly_xlp": 1.28,
+      "index_day": 0.36,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.61,
-      "day_bp": 4.0
+      "level": 4.58,
+      "day_bp": -2.0
     },
     "dxy": {
-      "level": 101.28,
-      "day_pct": 0.3
+      "level": 100.94,
+      "day_pct": -0.33
     },
     "curve": {
-      "level": 0.36,
-      "prev": 0.35,
+      "level": 0.4,
+      "prev": 0.36,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
-    "context_cls": "r"
+    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
+    "context_cls": "g"
   },
   "stage3": {
     "breadth": {
-      "value": 0.58,
-      "state": "광범위 ↑",
-      "meter": 75,
-      "cls": "g"
+      "value": -0.5,
+      "state": "중립",
+      "meter": 55,
+      "cls": "a"
     },
     "hy": {
       "level": 2.69,
-      "chg20d": -0.02,
+      "chg20d": 0.03,
       "meter": 0,
       "alert": false
     },
