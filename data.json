@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T22:39:52Z",
+  "updated": "2026-07-15T22:40:54Z",
   "verdict": {
     "regime": "healthy",
     "label": "호재 민감 장세",
@@ -13,7 +13,7 @@
       "name": "CPI",
       "oc_pct": 0.12,
       "day_pct": 0.36,
-      "vol_ratio": 0.61,
+      "vol_ratio": 0.62,
       "pattern": "갭업→양봉 지속",
       "cls": "g",
       "gap_pct": 0.23,
@@ -26,7 +26,7 @@
         "name": "CPI",
         "oc_pct": 0.12,
         "day_pct": 0.36,
-        "vol_ratio": 0.61,
+        "vol_ratio": 0.62,
         "pattern": "갭업→양봉 지속",
         "cls": "g"
       },
@@ -78,25 +78,25 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 2.12,
-      "xly_xlp": 1.28,
-      "index_day": 0.36,
+      "sphb_splv": -0.17,
+      "xly_xlp": 0.89,
+      "index_day": 0.4,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.58,
-      "day_bp": -2.0
+      "level": 4.54,
+      "day_bp": -4.0
     },
     "dxy": {
-      "level": 100.94,
-      "day_pct": -0.33
+      "level": 100.5,
+      "day_pct": -0.44
     },
     "curve": {
-      "level": 0.4,
-      "prev": 0.36,
+      "level": 0.42,
+      "prev": 0.4,
       "inverted": false
     },
     "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
@@ -104,14 +104,14 @@
   },
   "stage3": {
     "breadth": {
-      "value": -0.5,
+      "value": 0.04,
       "state": "중립",
       "meter": 55,
       "cls": "a"
     },
     "hy": {
-      "level": 2.69,
-      "chg20d": 0.03,
+      "level": 2.72,
+      "chg20d": 0.01,
       "meter": 0,
       "alert": false
     },
