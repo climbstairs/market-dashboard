@@ -334,5 +334,11 @@
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
     "conflict": true
+  },
+  {
+    "date": "2026-07-20",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
   }
 ]

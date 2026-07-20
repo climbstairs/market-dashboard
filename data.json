@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-17T22:33:11Z",
+  "updated": "2026-07-20T22:40:09Z",
   "verdict": {
-    "regime": "blind_trend",
-    "label": "맹목적 추세 추종",
-    "color": "#60a5fa",
-    "strategy": "표면은 견조하나 내부·신용 경계. 추세 추종하되 헤지 동반 권고.",
-    "conflict": true
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "color": "#34d399",
+    "strategy": "표면·내부가 함께 견조. 주도주 매수, 가벼운 악재는 저가매수 기회.",
+    "conflict": false
   },
   "stage1": {
     "latest": {
@@ -78,40 +78,40 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.91,
-      "xly_xlp": -0.9,
-      "index_day": -0.99,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 0.4,
+      "xly_xlp": -0.33,
+      "index_day": -0.16,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.54,
-      "day_bp": -3.0
+      "level": 4.6,
+      "day_bp": 6.0
     },
     "dxy": {
-      "level": 100.75,
-      "day_pct": 0.02
+      "level": 101.0,
+      "day_pct": 0.25
     },
     "curve": {
-      "level": 0.37,
-      "prev": 0.41,
+      "level": 0.39,
+      "prev": 0.37,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
     "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": 1.78,
+      "value": 1.81,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.71,
-      "chg20d": 0.05,
+      "level": 2.73,
+      "chg20d": 0.07,
       "meter": 0,
       "alert": false
     },
