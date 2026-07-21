@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T22:40:09Z",
+  "updated": "2026-07-21T22:37:02Z",
   "verdict": {
     "regime": "healthy",
     "label": "호재 민감 장세",
@@ -78,40 +78,40 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.4,
-      "xly_xlp": -0.33,
-      "index_day": -0.16,
+      "sphb_splv": 3.61,
+      "xly_xlp": 1.18,
+      "index_day": 0.83,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.6,
-      "day_bp": 6.0
+      "level": 4.63,
+      "day_bp": 3.0
     },
     "dxy": {
-      "level": 101.0,
-      "day_pct": 0.25
+      "level": 101.19,
+      "day_pct": 0.2
     },
     "curve": {
-      "level": 0.39,
-      "prev": 0.37,
+      "level": 0.37,
+      "prev": 0.39,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
-    "context_cls": "r"
+    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
+    "context_cls": "a"
   },
   "stage3": {
     "breadth": {
-      "value": 1.81,
+      "value": 0.98,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.73,
-      "chg20d": 0.07,
+      "level": 2.69,
+      "chg20d": 0.04,
       "meter": 0,
       "alert": false
     },

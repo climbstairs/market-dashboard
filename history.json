@@ -340,5 +340,11 @@
     "regime": "healthy",
     "label": "호재 민감 장세",
     "conflict": false
+  },
+  {
+    "date": "2026-07-21",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "conflict": false
   }
 ]
