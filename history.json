@@ -376,5 +376,11 @@
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
     "conflict": true
+  },
+  {
+    "date": "2026-07-29",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
   }
 ]
