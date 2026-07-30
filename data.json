@@ -1,32 +1,41 @@
 {
-  "updated": "2026-07-29T22:40:47Z",
+  "updated": "2026-07-30T22:46:55Z",
   "verdict": {
-    "regime": "complacency",
-    "label": "호재 둔감 (고점 경계)",
-    "color": "#fbbf24",
-    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
+    "regime": "healthy",
+    "label": "호재 민감 장세",
+    "color": "#34d399",
+    "strategy": "표면·내부가 함께 견조. 주도주 매수, 가벼운 악재는 저가매수 기회.",
     "conflict": false
   },
   "stage1": {
     "latest": {
-      "date": "07-29",
-      "name": "FOMC",
-      "oc_pct": -1.42,
-      "day_pct": -1.54,
-      "vol_ratio": 1.5,
-      "pattern": "보합권 반응",
-      "cls": "a",
-      "gap_pct": -0.12,
-      "date_full": "2026-07-29",
+      "date": "07-30",
+      "name": "PCE",
+      "oc_pct": 0.77,
+      "day_pct": 1.68,
+      "vol_ratio": 1.41,
+      "pattern": "갭업→양봉 지속",
+      "cls": "g",
+      "gap_pct": 0.9,
+      "date_full": "2026-07-30",
       "strong_vol": true
     },
     "ledger": [
+      {
+        "date": "07-30",
+        "name": "PCE",
+        "oc_pct": 0.77,
+        "day_pct": 1.68,
+        "vol_ratio": 1.41,
+        "pattern": "갭업→양봉 지속",
+        "cls": "g"
+      },
       {
         "date": "07-29",
         "name": "FOMC",
         "oc_pct": -1.42,
         "day_pct": -1.54,
-        "vol_ratio": 1.5,
+        "vol_ratio": 1.54,
         "pattern": "보합권 반응",
         "cls": "a"
       },
@@ -65,54 +74,45 @@
         "vol_ratio": 1.56,
         "pattern": "보합권 반응",
         "cls": "a"
-      },
-      {
-        "date": "06-10",
-        "name": "CPI",
-        "oc_pct": -1.09,
-        "day_pct": -1.58,
-        "vol_ratio": 1.18,
-        "pattern": "갭다운→음봉 (투매 지속)",
-        "cls": "r"
       }
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -2.61,
-      "xly_xlp": -1.11,
-      "index_day": -1.54,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 5.39,
+      "xly_xlp": 2.93,
+      "index_day": 1.68,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.62,
-      "day_bp": 2.0
+      "level": 4.66,
+      "day_bp": 4.0
     },
     "dxy": {
-      "level": 100.8,
-      "day_pct": -0.57
+      "level": 99.97,
+      "day_pct": -0.82
     },
     "curve": {
       "level": 0.45,
-      "prev": 0.35,
+      "prev": 0.45,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
-    "context_cls": "r"
+    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
+    "context_cls": "a"
   },
   "stage3": {
     "breadth": {
-      "value": 3.8,
+      "value": 1.48,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.84,
-      "chg20d": 0.09,
-      "meter": 1,
+      "level": 2.87,
+      "chg20d": 0.13,
+      "meter": 2,
       "alert": false
     },
     "putcall": {
