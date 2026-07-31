@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T22:46:55Z",
+  "updated": "2026-07-31T22:42:44Z",
   "verdict": {
     "regime": "healthy",
     "label": "호재 민감 장세",
@@ -13,7 +13,7 @@
       "name": "PCE",
       "oc_pct": 0.77,
       "day_pct": 1.68,
-      "vol_ratio": 1.41,
+      "vol_ratio": 1.43,
       "pattern": "갭업→양봉 지속",
       "cls": "g",
       "gap_pct": 0.9,
@@ -26,7 +26,7 @@
         "name": "PCE",
         "oc_pct": 0.77,
         "day_pct": 1.68,
-        "vol_ratio": 1.41,
+        "vol_ratio": 1.43,
         "pattern": "갭업→양봉 지속",
         "cls": "g"
       },
@@ -78,24 +78,24 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 5.39,
-      "xly_xlp": 2.93,
-      "index_day": 1.68,
+      "sphb_splv": 0.25,
+      "xly_xlp": 3.8,
+      "index_day": 0.72,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.66,
-      "day_bp": 4.0
+      "level": 4.75,
+      "day_bp": 8.0
     },
     "dxy": {
-      "level": 99.97,
-      "day_pct": -0.82
+      "level": 99.8,
+      "day_pct": -0.21
     },
     "curve": {
-      "level": 0.45,
+      "level": 0.47,
       "prev": 0.45,
       "inverted": false
     },
@@ -104,15 +104,15 @@
   },
   "stage3": {
     "breadth": {
-      "value": 1.48,
-      "state": "광범위 ↑",
-      "meter": 75,
-      "cls": "g"
+      "value": -0.25,
+      "state": "중립",
+      "meter": 55,
+      "cls": "a"
     },
     "hy": {
-      "level": 2.87,
-      "chg20d": 0.13,
-      "meter": 2,
+      "level": 2.84,
+      "chg20d": 0.09,
+      "meter": 1,
       "alert": false
     },
     "putcall": {
