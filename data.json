@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T22:42:44Z",
+  "updated": "2026-08-03T22:41:40Z",
   "verdict": {
     "regime": "healthy",
     "label": "호재 민감 장세",
@@ -78,25 +78,25 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.25,
-      "xly_xlp": 3.8,
-      "index_day": 0.72,
+      "sphb_splv": 2.57,
+      "xly_xlp": 2.05,
+      "index_day": 1.42,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.75,
-      "day_bp": 8.0
+      "level": 4.69,
+      "day_bp": -6.0
     },
     "dxy": {
-      "level": 99.8,
-      "day_pct": -0.21
+      "level": 99.99,
+      "day_pct": 0.19
     },
     "curve": {
-      "level": 0.47,
-      "prev": 0.45,
+      "level": 0.45,
+      "prev": 0.47,
       "inverted": false
     },
     "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
@@ -104,7 +104,7 @@
   },
   "stage3": {
     "breadth": {
-      "value": -0.25,
+      "value": 0.13,
       "state": "중립",
       "meter": 55,
       "cls": "a"
