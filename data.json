@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T22:19:59Z",
+  "updated": "2026-08-11T22:24:09Z",
   "verdict": {
     "regime": "healthy",
     "label": "호재 민감 장세",
@@ -78,36 +78,36 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.1,
-      "xly_xlp": 0.04,
-      "index_day": -0.03,
+      "sphb_splv": 0.61,
+      "xly_xlp": -0.05,
+      "index_day": -0.32,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.7,
-      "day_bp": 4.0
+      "level": 4.68,
+      "day_bp": -1.0
     },
     "dxy": {
       "level": 99.81,
-      "day_pct": 0.21
+      "day_pct": 0.0
     },
     "curve": {
-      "level": 0.47,
-      "prev": 0.46,
+      "level": 0.48,
+      "prev": 0.47,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
     "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -0.38,
-      "state": "중립",
-      "meter": 55,
-      "cls": "a"
+      "value": 0.88,
+      "state": "광범위 ↑",
+      "meter": 75,
+      "cls": "g"
     },
     "hy": {
       "level": 2.7,
