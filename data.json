@@ -1,26 +1,35 @@
 {
-  "updated": "2026-08-11T22:24:09Z",
+  "updated": "2026-08-12T22:24:09Z",
   "verdict": {
-    "regime": "healthy",
-    "label": "호재 민감 장세",
-    "color": "#34d399",
-    "strategy": "표면·내부가 함께 견조. 주도주 매수, 가벼운 악재는 저가매수 기회.",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "color": "#fbbf24",
+    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
     "conflict": false
   },
   "stage1": {
     "latest": {
-      "date": "08-07",
-      "name": "고용보고서",
-      "oc_pct": 0.29,
-      "day_pct": 0.61,
-      "vol_ratio": 0.88,
-      "pattern": "갭업→양봉 지속",
-      "cls": "g",
-      "gap_pct": 0.32,
-      "date_full": "2026-08-07",
+      "date": "08-12",
+      "name": "CPI",
+      "oc_pct": -0.29,
+      "day_pct": 0.25,
+      "vol_ratio": 0.66,
+      "pattern": "갭업→음봉 소멸",
+      "cls": "r",
+      "gap_pct": 0.54,
+      "date_full": "2026-08-12",
       "strong_vol": false
     },
     "ledger": [
+      {
+        "date": "08-12",
+        "name": "CPI",
+        "oc_pct": -0.29,
+        "day_pct": 0.25,
+        "vol_ratio": 0.66,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      },
       {
         "date": "08-07",
         "name": "고용보고서",
@@ -65,22 +74,13 @@
         "vol_ratio": 0.89,
         "pattern": "갭업→음봉 소멸",
         "cls": "r"
-      },
-      {
-        "date": "06-25",
-        "name": "PCE",
-        "oc_pct": -0.62,
-        "day_pct": 0.14,
-        "vol_ratio": 0.89,
-        "pattern": "갭업→음봉 소멸",
-        "cls": "r"
       }
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.61,
-      "xly_xlp": -0.05,
-      "index_day": -0.32,
+      "sphb_splv": 1.43,
+      "xly_xlp": -1.59,
+      "index_day": 0.25,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
@@ -88,30 +88,30 @@
   "stage2": {
     "y10": {
       "level": 4.68,
-      "day_bp": -1.0
+      "day_bp": -0.0
     },
     "dxy": {
-      "level": 99.81,
-      "day_pct": 0.0
+      "level": 99.98,
+      "day_pct": 0.17
     },
     "curve": {
       "level": 0.48,
-      "prev": 0.47,
+      "prev": 0.48,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
-    "context_cls": "r"
+    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
+    "context_cls": "a"
   },
   "stage3": {
     "breadth": {
-      "value": 0.88,
+      "value": 1.43,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 2.7,
-      "chg20d": 0.01,
+      "level": 2.72,
+      "chg20d": 0.0,
       "meter": 0,
       "alert": false
     },

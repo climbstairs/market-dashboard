@@ -430,5 +430,11 @@
     "regime": "healthy",
     "label": "호재 민감 장세",
     "conflict": false
+  },
+  {
+    "date": "2026-08-12",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
+    "conflict": false
   }
 ]
