@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T23:21:03Z",
+  "updated": "2026-09-07T23:46:56Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -13,7 +13,7 @@
       "name": "고용보고서",
       "oc_pct": -0.24,
       "day_pct": -0.39,
-      "vol_ratio": 0.9,
+      "vol_ratio": 0.92,
       "pattern": "보합권 반응",
       "cls": "a",
       "gap_pct": -0.15,
@@ -26,7 +26,7 @@
         "name": "고용보고서",
         "oc_pct": -0.24,
         "day_pct": -0.39,
-        "vol_ratio": 0.9,
+        "vol_ratio": 0.92,
         "pattern": "보합권 반응",
         "cls": "a"
       },
@@ -91,8 +91,8 @@
       "day_bp": 2.0
     },
     "dxy": {
-      "level": 99.16,
-      "day_pct": 0.16
+      "level": 99.18,
+      "day_pct": 0.02
     },
     "curve": {
       "level": 0.41,
