@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T23:40:49Z",
+  "updated": "2026-09-09T23:31:03Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -13,7 +13,7 @@
       "name": "고용보고서",
       "oc_pct": -0.24,
       "day_pct": -0.39,
-      "vol_ratio": 0.92,
+      "vol_ratio": 0.93,
       "pattern": "보합권 반응",
       "cls": "a",
       "gap_pct": -0.15,
@@ -26,7 +26,7 @@
         "name": "고용보고서",
         "oc_pct": -0.24,
         "day_pct": -0.39,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.93,
         "pattern": "보합권 반응",
         "cls": "a"
       },
@@ -78,40 +78,40 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 1.0,
-      "xly_xlp": -0.14,
-      "index_day": -0.55,
+      "sphb_splv": -0.13,
+      "xly_xlp": -0.19,
+      "index_day": -0.46,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.81,
-      "day_bp": 2.0
+      "level": 4.84,
+      "day_bp": 3.0
     },
     "dxy": {
-      "level": 98.84,
-      "day_pct": -0.33
+      "level": 98.78,
+      "day_pct": -0.06
     },
     "curve": {
-      "level": 0.41,
+      "level": 0.4,
       "prev": 0.41,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
     "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -0.68,
+      "value": -1.7,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 2.68,
-      "chg20d": -0.02,
+      "level": 2.67,
+      "chg20d": -0.05,
       "meter": 0,
       "alert": false
     },
