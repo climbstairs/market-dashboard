@@ -550,5 +550,11 @@
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
     "conflict": false
+  },
+  {
+    "date": "2026-09-10",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
   }
 ]
