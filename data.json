@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T23:43:29Z",
+  "updated": "2026-09-16T23:52:46Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "09-11",
-      "name": "CPI",
-      "oc_pct": -0.06,
-      "day_pct": 0.85,
-      "vol_ratio": 1.23,
+      "date": "09-16",
+      "name": "FOMC",
+      "oc_pct": -0.72,
+      "day_pct": -0.44,
+      "vol_ratio": 1.53,
       "pattern": "갭업→음봉 소멸",
       "cls": "r",
-      "gap_pct": 0.91,
-      "date_full": "2026-09-11",
-      "strong_vol": false
+      "gap_pct": 0.28,
+      "date_full": "2026-09-16",
+      "strong_vol": true
     },
     "ledger": [
+      {
+        "date": "09-16",
+        "name": "FOMC",
+        "oc_pct": -0.72,
+        "day_pct": -0.44,
+        "vol_ratio": 1.53,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      },
       {
         "date": "09-11",
         "name": "CPI",
@@ -65,52 +74,43 @@
         "vol_ratio": 0.88,
         "pattern": "갭업→양봉 지속",
         "cls": "g"
-      },
-      {
-        "date": "07-30",
-        "name": "PCE",
-        "oc_pct": 0.77,
-        "day_pct": 1.68,
-        "vol_ratio": 1.43,
-        "pattern": "갭업→양봉 지속",
-        "cls": "g"
       }
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.19,
-      "xly_xlp": -0.94,
-      "index_day": -0.46,
+      "sphb_splv": 0.86,
+      "xly_xlp": -0.15,
+      "index_day": -0.44,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.0,
-      "day_bp": 4.0
+      "level": 5.01,
+      "day_bp": 1.0
     },
     "dxy": {
-      "level": 99.61,
-      "day_pct": 0.15
+      "level": 100.34,
+      "day_pct": 0.69
     },
     "curve": {
-      "level": 0.33,
-      "prev": 0.32,
+      "level": 0.27,
+      "prev": 0.33,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
     "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -1.14,
+      "value": -1.7,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 2.71,
+      "level": 2.76,
       "chg20d": 0.01,
       "meter": 0,
       "alert": false
