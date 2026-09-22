@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T00:17:47Z",
+  "updated": "2026-09-22T23:50:55Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -78,25 +78,25 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 2.02,
-      "xly_xlp": 0.51,
-      "index_day": -0.12,
+      "sphb_splv": 1.51,
+      "xly_xlp": -0.89,
+      "index_day": -0.02,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.96,
-      "day_bp": -4.0
+      "level": 4.97,
+      "day_bp": 0.0
     },
     "dxy": {
-      "level": 100.39,
-      "day_pct": 0.17
+      "level": 100.56,
+      "day_pct": 0.13
     },
     "curve": {
-      "level": 0.2,
-      "prev": 0.25,
+      "level": 0.25,
+      "prev": 0.2,
       "inverted": false
     },
     "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
@@ -104,14 +104,14 @@
   },
   "stage3": {
     "breadth": {
-      "value": -3.51,
+      "value": -5.34,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 2.68,
-      "chg20d": -0.02,
+      "level": 2.66,
+      "chg20d": -0.03,
       "meter": 0,
       "alert": false
     },
