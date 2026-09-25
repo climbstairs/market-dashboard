@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-23T23:58:36Z",
+  "updated": "2026-09-25T00:01:29Z",
   "verdict": {
-    "regime": "stress",
-    "label": "악재 민감 장세",
-    "color": "#f87171",
-    "strategy": "현금 비중 확대, 펀더멘탈 확실한 방어주 위주 재편.",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "color": "#60a5fa",
+    "strategy": "표면은 견조하나 내부·신용 경계. 추세 추종하되 헤지 동반 권고.",
     "conflict": false
   },
   "stage1": {
@@ -87,16 +87,16 @@
   },
   "stage2": {
     "y10": {
-      "level": 5.11,
-      "day_bp": 15.0
+      "level": 5.16,
+      "day_bp": 5.0
     },
     "dxy": {
-      "level": 101.13,
-      "day_pct": 0.7
+      "level": 101.27,
+      "day_pct": 0.17
     },
     "curve": {
-      "level": 0.26,
-      "prev": 0.25,
+      "level": 0.31,
+      "prev": 0.26,
       "inverted": false
     },
     "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
@@ -110,8 +110,8 @@
       "cls": "r"
     },
     "hy": {
-      "level": 2.68,
-      "chg20d": -0.02,
+      "level": 2.73,
+      "chg20d": 0.06,
       "meter": 0,
       "alert": false
     },
