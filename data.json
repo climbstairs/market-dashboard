@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T00:50:54Z",
+  "updated": "2026-10-02T01:05:32Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "09-16",
-      "name": "FOMC",
-      "oc_pct": -0.72,
-      "day_pct": -0.44,
-      "vol_ratio": 1.53,
+      "date": "09-30",
+      "name": "PCE",
+      "oc_pct": -0.5,
+      "day_pct": -0.21,
+      "vol_ratio": 1.41,
       "pattern": "갭업→음봉 소멸",
       "cls": "r",
-      "gap_pct": 0.28,
-      "date_full": "2026-09-16",
+      "gap_pct": 0.29,
+      "date_full": "2026-09-30",
       "strong_vol": true
     },
     "ledger": [
+      {
+        "date": "09-30",
+        "name": "PCE",
+        "oc_pct": -0.5,
+        "day_pct": -0.21,
+        "vol_ratio": 1.41,
+        "pattern": "갭업→음봉 소멸",
+        "cls": "r"
+      },
       {
         "date": "09-16",
         "name": "FOMC",
@@ -65,54 +74,45 @@
         "vol_ratio": 0.67,
         "pattern": "갭업→음봉 소멸",
         "cls": "r"
-      },
-      {
-        "date": "08-07",
-        "name": "고용보고서",
-        "oc_pct": 0.29,
-        "day_pct": 0.61,
-        "vol_ratio": 0.88,
-        "pattern": "갭업→양봉 지속",
-        "cls": "g"
       }
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.78,
-      "xly_xlp": 0.66,
-      "index_day": -0.18,
+      "sphb_splv": 0.23,
+      "xly_xlp": 1.26,
+      "index_day": -0.21,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.29,
-      "day_bp": 4.0
+      "level": 5.24,
+      "day_bp": -6.0
     },
     "dxy": {
-      "level": 101.49,
-      "day_pct": 0.12
+      "level": 102.08,
+      "day_pct": 0.62
     },
     "curve": {
-      "level": 0.41,
-      "prev": 0.37,
+      "level": 0.46,
+      "prev": 0.41,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
     "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -4.15,
+      "value": -4.5,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 3.08,
-      "chg20d": 0.43,
-      "meter": 9,
+      "level": 3.12,
+      "chg20d": 0.46,
+      "meter": 10,
       "alert": true
     },
     "putcall": {
