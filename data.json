@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T01:55:28Z",
+  "updated": "2026-10-07T01:01:25Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -78,25 +78,25 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 0.16,
-      "xly_xlp": -0.29,
-      "index_day": 0.67,
+      "sphb_splv": -0.13,
+      "xly_xlp": 0.24,
+      "index_day": 0.55,
       "riskoff": false,
       "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.31,
-      "day_bp": 3.0
+      "level": 5.27,
+      "day_bp": -4.0
     },
     "dxy": {
-      "level": 102.09,
-      "day_pct": -0.08
+      "level": 101.94,
+      "day_pct": 0.11
     },
     "curve": {
-      "level": 0.47,
-      "prev": 0.45,
+      "level": 0.48,
+      "prev": 0.47,
       "inverted": false
     },
     "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
@@ -104,15 +104,15 @@
   },
   "stage3": {
     "breadth": {
-      "value": -4.18,
+      "value": -3.68,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 3.1,
-      "chg20d": 0.42,
-      "meter": 9,
+      "level": 3.12,
+      "chg20d": 0.44,
+      "meter": 10,
       "alert": true
     },
     "putcall": {
