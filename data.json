@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T01:01:25Z",
+  "updated": "2026-10-08T01:20:02Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -87,16 +87,16 @@
   },
   "stage2": {
     "y10": {
-      "level": 5.27,
-      "day_bp": -4.0
+      "level": 5.28,
+      "day_bp": 1.0
     },
     "dxy": {
-      "level": 101.94,
-      "day_pct": 0.11
+      "level": 102.25,
+      "day_pct": 0.41
     },
     "curve": {
-      "level": 0.48,
-      "prev": 0.47,
+      "level": 0.51,
+      "prev": 0.48,
       "inverted": false
     },
     "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
@@ -110,9 +110,9 @@
       "cls": "r"
     },
     "hy": {
-      "level": 3.12,
-      "chg20d": 0.44,
-      "meter": 10,
+      "level": 3.03,
+      "chg20d": 0.36,
+      "meter": 7,
       "alert": true
     },
     "putcall": {
