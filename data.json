@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T01:20:02Z",
+  "updated": "2026-10-09T01:27:52Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -78,41 +78,41 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.13,
-      "xly_xlp": 0.24,
-      "index_day": 0.55,
-      "riskoff": false,
-      "tag": "내부도 동반 — 표면 반응과 일치"
+      "sphb_splv": -3.1,
+      "xly_xlp": -1.75,
+      "index_day": -0.42,
+      "riskoff": true,
+      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.28,
-      "day_bp": 1.0
+      "level": 5.23,
+      "day_bp": -5.0
     },
     "dxy": {
-      "level": 102.25,
-      "day_pct": 0.41
+      "level": 102.04,
+      "day_pct": -0.1
     },
     "curve": {
-      "level": 0.51,
-      "prev": 0.48,
+      "level": 0.47,
+      "prev": 0.51,
       "inverted": false
     },
-    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
-    "context_cls": "a"
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -3.68,
+      "value": -2.68,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
     },
     "hy": {
-      "level": 3.03,
-      "chg20d": 0.36,
-      "meter": 7,
+      "level": 3.09,
+      "chg20d": 0.38,
+      "meter": 9,
       "alert": true
     },
     "putcall": {
