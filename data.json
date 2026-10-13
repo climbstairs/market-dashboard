@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T01:17:08Z",
+  "updated": "2026-10-13T02:43:04Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -78,9 +78,9 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -3.1,
-      "xly_xlp": -1.75,
-      "index_day": -0.42,
+      "sphb_splv": -3.02,
+      "xly_xlp": -1.67,
+      "index_day": -0.06,
       "riskoff": true,
       "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
@@ -88,11 +88,11 @@
   "stage2": {
     "y10": {
       "level": 5.24,
-      "day_bp": 1.0
+      "day_bp": -0.0
     },
     "dxy": {
-      "level": 102.23,
-      "day_pct": 0.09
+      "level": 102.42,
+      "day_pct": -0.16
     },
     "curve": {
       "level": 0.44,
@@ -104,7 +104,7 @@
   },
   "stage3": {
     "breadth": {
-      "value": -2.68,
+      "value": -3.04,
       "state": "약화 ↓",
       "meter": 35,
       "cls": "r"
