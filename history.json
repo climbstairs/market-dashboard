@@ -691,8 +691,8 @@
   },
   {
     "date": "2026-10-15",
-    "regime": "blind_trend",
-    "label": "맹목적 추세 추종",
+    "regime": "complacency",
+    "label": "호재 둔감 (고점 경계)",
     "conflict": false
   }
 ]
