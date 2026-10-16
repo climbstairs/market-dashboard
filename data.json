@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-15T23:53:12Z",
+  "updated": "2026-10-16T23:54:47Z",
   "verdict": {
-    "regime": "complacency",
-    "label": "호재 둔감 (고점 경계)",
-    "color": "#fbbf24",
-    "strategy": "추가 매수 자제, 분할 매도로 차익 실현.",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "color": "#f87171",
+    "strategy": "현금 비중 확대, 펀더멘탈 확실한 방어주 위주 재편.",
     "conflict": false
   },
   "stage1": {
@@ -78,41 +78,41 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.43,
-      "xly_xlp": 0.99,
-      "index_day": 0.28,
+      "sphb_splv": -4.5,
+      "xly_xlp": -1.9,
+      "index_day": -1.11,
       "riskoff": true,
       "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.09,
-      "day_bp": -10.0
+      "level": 5.1,
+      "day_bp": 1.0
     },
     "dxy": {
-      "level": 102.04,
-      "day_pct": -0.49
+      "level": 101.78,
+      "day_pct": -0.22
     },
     "curve": {
-      "level": 0.33,
-      "prev": 0.37,
+      "level": 0.35,
+      "prev": 0.33,
       "inverted": false
     },
-    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
-    "context_cls": "g"
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": -0.41,
-      "state": "중립",
-      "meter": 55,
-      "cls": "a"
+      "value": 0.64,
+      "state": "광범위 ↑",
+      "meter": 75,
+      "cls": "g"
     },
     "hy": {
-      "level": 3.25,
-      "chg20d": 0.55,
-      "meter": 14,
+      "level": 3.23,
+      "chg20d": 0.53,
+      "meter": 13,
       "alert": true
     },
     "putcall": {
