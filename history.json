@@ -700,5 +700,11 @@
     "regime": "stress",
     "label": "악재 민감 장세",
     "conflict": false
+  },
+  {
+    "date": "2026-10-20",
+    "regime": "stress",
+    "label": "악재 민감 장세",
+    "conflict": false
   }
 ]
