@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T00:14:52Z",
+  "updated": "2026-10-23T00:10:23Z",
   "verdict": {
     "regime": "complacency",
     "label": "호재 둔감 (고점 경계)",
@@ -78,42 +78,42 @@
     ],
     "summary": "최근 6건 중 0건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": -0.68,
-      "xly_xlp": 0.29,
-      "index_day": 0.34,
-      "riskoff": true,
-      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
+      "sphb_splv": 1.84,
+      "xly_xlp": 0.76,
+      "index_day": 0.53,
+      "riskoff": false,
+      "tag": "내부도 동반 — 표면 반응과 일치"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.15,
-      "day_bp": 3.0
+      "level": 4.95,
+      "day_bp": -19.0
     },
     "dxy": {
-      "level": 101.68,
-      "day_pct": -0.05
+      "level": 101.57,
+      "day_pct": -0.21
     },
     "curve": {
-      "level": null,
-      "prev": null,
+      "level": 0.31,
+      "prev": 0.32,
       "inverted": false
     },
-    "context": "주가 움직임에 금리·달러가 동조하지 않음 → 매크로보다 수급/차익 요인.",
-    "context_cls": "a"
+    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
+    "context_cls": "g"
   },
   "stage3": {
     "breadth": {
-      "value": 2.01,
+      "value": 1.82,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": null,
-      "chg20d": null,
-      "meter": 50,
-      "alert": false
+      "level": 3.27,
+      "chg20d": 0.54,
+      "meter": 15,
+      "alert": true
     },
     "putcall": {
       "value": null,
@@ -121,7 +121,7 @@
     }
   },
   "status": {
-    "fred_ok": false,
+    "fred_ok": true,
     "stooq_ok": true,
     "putcall_ok": false,
     "surprise_tagging": false
