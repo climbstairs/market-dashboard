@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T03:04:55Z",
+  "updated": "2026-11-04T01:40:48Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -87,19 +87,19 @@
   },
   "stage2": {
     "y10": {
-      "level": 4.89,
-      "day_bp": -4.0
+      "level": 4.95,
+      "day_bp": 6.0
     },
     "dxy": {
-      "level": 101.84,
-      "day_pct": 0.09
+      "level": 101.37,
+      "day_pct": -0.37
     },
     "curve": {
-      "level": 0.32,
-      "prev": 0.38,
+      "level": 0.34,
+      "prev": 0.32,
       "inverted": false
     },
-    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
     "context_cls": "r"
   },
   "stage3": {
@@ -110,8 +110,8 @@
       "cls": "g"
     },
     "hy": {
-      "level": 3.44,
-      "chg20d": 0.34,
+      "level": 3.43,
+      "chg20d": 0.31,
       "meter": 20,
       "alert": true
     },
