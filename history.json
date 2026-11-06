@@ -778,5 +778,11 @@
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
     "conflict": true
+  },
+  {
+    "date": "2026-11-06",
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "conflict": true
   }
 ]
