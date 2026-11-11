@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T03:49:01Z",
+  "updated": "2026-11-11T01:28:58Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -87,20 +87,20 @@
   },
   "stage2": {
     "y10": {
-      "level": 4.86,
-      "day_bp": 0.0
+      "level": 4.98,
+      "day_bp": 12.0
     },
     "dxy": {
-      "level": 101.68,
-      "day_pct": 0.03
+      "level": 102.29,
+      "day_pct": 0.63
     },
     "curve": {
-      "level": 0.32,
-      "prev": 0.35,
+      "level": 0.25,
+      "prev": 0.32,
       "inverted": false
     },
-    "context": "주가 상승 + 금리·달러 안정 → 순수 안도(골디락스)에 가까움.",
-    "context_cls": "g"
+    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
+    "context_cls": "a"
   },
   "stage3": {
     "breadth": {
@@ -110,9 +110,9 @@
       "cls": "g"
     },
     "hy": {
-      "level": 3.42,
-      "chg20d": 0.31,
-      "meter": 19,
+      "level": 3.34,
+      "chg20d": 0.23,
+      "meter": 17,
       "alert": true
     },
     "putcall": {
