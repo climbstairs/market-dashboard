@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T01:28:58Z",
+  "updated": "2026-11-12T02:31:20Z",
   "verdict": {
     "regime": "blind_trend",
     "label": "맹목적 추세 추종",
@@ -9,18 +9,27 @@
   },
   "stage1": {
     "latest": {
-      "date": "11-06",
-      "name": "고용보고서",
-      "oc_pct": 0.06,
-      "day_pct": 0.31,
-      "vol_ratio": 1.3,
-      "pattern": "갭업→양봉 지속",
+      "date": "11-10",
+      "name": "CPI",
+      "oc_pct": 0.26,
+      "day_pct": -0.37,
+      "vol_ratio": 0.84,
+      "pattern": "갭다운→양봉 회복",
       "cls": "g",
-      "gap_pct": 0.25,
-      "date_full": "2026-11-06",
-      "strong_vol": true
+      "gap_pct": -0.63,
+      "date_full": "2026-11-10",
+      "strong_vol": false
     },
     "ledger": [
+      {
+        "date": "11-10",
+        "name": "CPI",
+        "oc_pct": 0.26,
+        "day_pct": -0.37,
+        "vol_ratio": 0.84,
+        "pattern": "갭다운→양봉 회복",
+        "cls": "g"
+      },
       {
         "date": "11-06",
         "name": "고용보고서",
@@ -65,46 +74,37 @@
         "vol_ratio": 1.01,
         "pattern": "갭업→음봉 소멸",
         "cls": "r"
-      },
-      {
-        "date": "09-30",
-        "name": "PCE",
-        "oc_pct": -0.5,
-        "day_pct": -0.21,
-        "vol_ratio": 1.41,
-        "pattern": "갭업→음봉 소멸",
-        "cls": "r"
       }
     ],
-    "summary": "최근 6건 중 1건 '갭다운 후 회복' — 하방 충격 소화 경향",
+    "summary": "최근 6건 중 2건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 4.23,
-      "xly_xlp": 2.0,
-      "index_day": 2.37,
-      "riskoff": false,
-      "tag": "내부도 동반 — 표면 반응과 일치"
+      "sphb_splv": -1.57,
+      "xly_xlp": -0.12,
+      "index_day": -0.37,
+      "riskoff": true,
+      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 4.98,
-      "day_bp": 12.0
+      "level": 5.0,
+      "day_bp": 2.0
     },
     "dxy": {
-      "level": 102.29,
-      "day_pct": 0.63
+      "level": 102.94,
+      "day_pct": 0.7
     },
     "curve": {
       "level": 0.25,
       "prev": 0.32,
       "inverted": false
     },
-    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
-    "context_cls": "a"
+    "context": "주가 하락 + 금리 하락 → 성장 우려형 risk-off (안전자산 선호).",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": 7.14,
+      "value": 7.43,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
