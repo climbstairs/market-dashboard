@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-13T02:08:54Z",
+  "updated": "2026-11-14T01:49:50Z",
   "verdict": {
-    "regime": "healthy",
-    "label": "호재 민감 장세",
-    "color": "#34d399",
-    "strategy": "표면·내부가 함께 견조. 주도주 매수, 가벼운 악재는 저가매수 기회.",
-    "conflict": false
+    "regime": "blind_trend",
+    "label": "맹목적 추세 추종",
+    "color": "#60a5fa",
+    "strategy": "표면은 견조하나 내부·신용 경계. 추세 추종하되 헤지 동반 권고.",
+    "conflict": true
   },
   "stage1": {
     "latest": {
@@ -78,41 +78,41 @@
     ],
     "summary": "최근 6건 중 2건 '갭다운 후 회복' — 하방 충격 소화 경향",
     "internals": {
-      "sphb_splv": 3.01,
-      "xly_xlp": -0.51,
-      "index_day": 1.32,
-      "riskoff": false,
-      "tag": "내부도 동반 — 표면 반응과 일치"
+      "sphb_splv": -2.32,
+      "xly_xlp": -1.79,
+      "index_day": -0.36,
+      "riskoff": true,
+      "tag": "지수 대비 내부 risk-off — '둔감'이 아닌 방어적 반응"
     }
   },
   "stage2": {
     "y10": {
-      "level": 5.1,
-      "day_bp": 10.0
+      "level": 5.15,
+      "day_bp": 5.0
     },
     "dxy": {
-      "level": 103.14,
+      "level": 103.41,
       "day_pct": 0.23
     },
     "curve": {
-      "level": 0.24,
-      "prev": 0.25,
+      "level": 0.27,
+      "prev": 0.24,
       "inverted": false
     },
-    "context": "주가 회복 + 금리·달러 동반 상승 → '호재를 악재로'(금리 우려) 맥락. 양봉은 안도가 아니라 금리 상승을 견디는 회복으로 해석.",
-    "context_cls": "a"
+    "context": "주가 하락 + 금리 상승 → 긴축/금리 우려 주도 하락.",
+    "context_cls": "r"
   },
   "stage3": {
     "breadth": {
-      "value": 6.33,
+      "value": 4.52,
       "state": "광범위 ↑",
       "meter": 75,
       "cls": "g"
     },
     "hy": {
-      "level": 3.3,
-      "chg20d": 0.14,
-      "meter": 16,
+      "level": 3.2,
+      "chg20d": -0.05,
+      "meter": 13,
       "alert": false
     },
     "putcall": {
